@@ -3,12 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <title>Beers</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
-<!-- <a href="GetBeerList.do?list=iloveslurpees&description=slurpeesarelife">View Beer List</a><br/> -->
-<a href="GetBeerList.do">View Beer List</a><br/>
-<a href="addbeer.jsp">Add a beer</a><br/>
-<!-- <a href="SendToRemoveForm.do">Remove a beer</a><br/> -->
+	<div class="jumbotron text-center">
+		<h1>Your Personal Beer Application</h1>
+		<p>View a list of beers, add a beer to the list, remove a beer
+			from a list, and edit the beer.</p>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3"></div>
+			<div class="col-sm-6 text-center">
+				<form action="GetBeerList.do" method="GET">
+					<button type=submit class="btn btn-primary btn-lg gradient">View Current Beer List</button>
+				</form>
+			</div>
+			<div class="col-sm-3"></div>
+		</div>
+		<!-- <div class="row">
+			<div class="col-sm-3"></div>
+			<div class="col-sm-6 text-center">
+				<form action="addbeer.jsp" method="POST">
+					<button type="submit">Add a Beer</button>
+				</form>
+			</div>
+			<div class="col-sm-3"></div>
+		</div> -->
+	</div>
+
+
 
 </body>
 </html>

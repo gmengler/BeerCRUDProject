@@ -86,7 +86,6 @@ public class BeerController {
 		 mv.setViewName("beerlist");
 		 mv.addObject("beerlist", beerService.getBeerList());
 		 return mv;
-		 
 
 	 }
 	 

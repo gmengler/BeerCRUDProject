@@ -61,7 +61,6 @@ public class BeerDAOImpl implements BeerDAO {
 	@Override
 	public void addBeer(Beer beer) {
 		beers.add(beer);
-
 	}
 
 	@Override
@@ -91,6 +90,8 @@ public class BeerDAOImpl implements BeerDAO {
 	public void modifyBeer(String name, String brewery, String city, String state, String abv) {
 		for (Beer beer : beers) {
 			if(beer.getName().equalsIgnoreCase(name)) {
+				beer.setName(name);
+				beer.setBrewery(brewery);
 				beer.setCity(city);
 				beer.setState(state);
 				beer.setAbv(abv);
