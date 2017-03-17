@@ -12,7 +12,7 @@
 	Edit city: <input type="text" name="city" value="${currentBeer.city}"/><br>
 	Edit state: <input type="text" name="state" value="${currentBeer.state}"/><br>
 	Edit percent alcohol: <input type="text" name="abv" value="${currentBeer.abv}"/><br>
-	<button type="submit" value="Edit Beer">Submit</button>
+	<button type="submit" value="Edit Beer">Submit changes</button>
 </form>
 
 

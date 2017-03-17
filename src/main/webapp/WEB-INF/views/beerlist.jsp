@@ -7,6 +7,10 @@
 <body>
 <h1>Beer List</h1>
 
+<form action="index.html">
+	<button type="submit">Home</button>
+</form>
+
 <c:forEach items="${beerlist }" var="beer">
 	Beer name: ${beer.name}<br>
 	Brewery: ${beer.brewery}<br>
