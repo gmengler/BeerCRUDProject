@@ -12,24 +12,29 @@
 <!-- Latest compiled JavaScript -->
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="index.css">
+<link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
 	<div class="jumbotron text-center">
 		<h1>Your Personal Beer Application</h1>
 		<p>View a list of beers, add a beer to the list, remove a beer
-			from a list, and edit the beer.</p>
+			from the list, and edit the beer.</p>
+		<form action="GetBeerList.do" method="GET">
+			<button type=submit class="btn btn-primary btn-lg gradient">View
+				Current Beer List</button>
+		</form>
 	</div>
 	<div class="container-fluid">
-		<div class="row">
+		<!-- <div class="row">
 			<div class="col-sm-3"></div>
 			<div class="col-sm-6 text-center">
 				<form action="GetBeerList.do" method="GET">
-					<button type=submit class="btn btn-primary btn-lg gradient">View Current Beer List</button>
+					<button type=submit class="btn btn-primary btn-lg gradient">View
+						Current Beer List</button>
 				</form>
 			</div>
 			<div class="col-sm-3"></div>
-		</div>
+		</div> -->
 		<!-- <div class="row">
 			<div class="col-sm-3"></div>
 			<div class="col-sm-6 text-center">

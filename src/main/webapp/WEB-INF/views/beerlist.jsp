@@ -34,14 +34,23 @@
 			</div>
 			<div class="col-sm-3"></div>
 		</div>
-		<div class="row text-center">
-			<c:forEach items="${beerlist }" var="beer">
-			Beer name: ${beer.name}<br>
-			Brewery: ${beer.brewery}<br>
-			City: ${beer.city}, ${beer.state}<br>
-			Alcohol by volume: ${beer.abv}%<br>
-				<br>
+			<c:forEach items="${beerlist}" var="beer">
 				<div class="row">
+					<div class="col-sm-3"></div>
+					<div class="col-sm-4" id="beerinfo">
+							<strong>Beer name:</strong> ${beer.name}<br> <strong>Brewery:</strong>
+							${beer.brewery}<br> <strong>City:</strong> ${beer.city},
+							${beer.state}<br> <strong>Alcohol by volume:</strong>
+							${beer.abv}%<br> <br>
+					</div>
+					<div class="col-sm-2">
+						<div id="beerpic">
+							<img class="resize" src="${beer.picURL}"/>
+						</div>
+					</div>
+					<div class="col-sm-3"></div>
+				</div>
+				<div class="row text-center">
 					<div class="col-sm-4"></div>
 					<div class="col-sm-2">
 						<form action="ViewBeer.do" method="GET">
@@ -58,7 +67,6 @@
 					<div class="col-sm-4"></div>
 				</div>
 			</c:forEach>
-		</div>
 	</div>
 </body>
 </html>

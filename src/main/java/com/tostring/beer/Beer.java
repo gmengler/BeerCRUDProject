@@ -7,11 +7,12 @@ public class Beer {
 	private String city;
 	private String state;
 	private String abv;
+	private String picURL;
 	
 	public Beer() {
 	}
 	
-	public Beer(String id, String beer, String brewery, String city, String state, String abv) {
+	public Beer(String id, String beer, String brewery, String city, String state, String abv, String picURL) {
 		super();
 		this.id = id;
 		this.name = beer;
@@ -19,6 +20,7 @@ public class Beer {
 		this.city = city;
 		this.state = state;
 		this.abv = abv;
+		this.picURL = picURL;
 	}
 
 	public String getId() {
@@ -68,11 +70,20 @@ public class Beer {
 	public void setAbv(String abv) {
 		this.abv = abv;
 	}
+	
+
+	public String getPicURL() {
+		return picURL;
+	}
+
+	public void setPicURL(String picURL) {
+		this.picURL = picURL;
+	}
 
 	@Override
 	public String toString() {
 		return "Beer [id=" + id + ", beer=" + name + ", brewery=" + brewery + ", city=" + city + ", state=" + state
-				+ ", abv=" + abv + "]";
+				+ ", abv=" + abv + "picURL=" + picURL + "]";
 	}
 	
 
