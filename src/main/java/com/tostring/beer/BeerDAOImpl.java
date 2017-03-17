@@ -88,14 +88,16 @@ public class BeerDAOImpl implements BeerDAO {
 	}
 
 	@Override
-	public Beer modifyBeer(Beer beer) {
-//		beers.get(index)
-		Beer b = null;
-		for (Beer beer1 : beers) {
-			
-		return null;
+	public void modifyBeer(String name, String brewery, String city, String state, String abv) {
+		for (Beer beer : beers) {
+			if(beer.getName().equalsIgnoreCase(name)) {
+				beer.setCity(city);
+				beer.setState(state);
+				beer.setAbv(abv);
+			}
+		}
 	}
-	
+		
 
 	@Override
 	public Beer nextBeer(String id) {

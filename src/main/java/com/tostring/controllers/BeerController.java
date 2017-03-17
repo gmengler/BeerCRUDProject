@@ -2,9 +2,11 @@ package com.tostring.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.tostring.beer.Beer;
@@ -15,9 +17,13 @@ import com.tostring.services.BeerService;
  * Handles requests for the application home page.
  */
 @Controller
+@SessionAttributes("currentBeer")
 public class BeerController {
 	
-	
+	@ModelAttribute("currentBeer")
+	public Beer beer(){
+		return new Beer();
+	}
 	@Autowired
 	private BeerService beerService;
 
@@ -43,14 +49,21 @@ public class BeerController {
 	 public ModelAndView selectBeer(@RequestParam("name")String name) {
 		 ModelAndView mv = new ModelAndView();
 		 mv.setViewName("singlebeer");
+		 mv.getModelMap().addAttribute("currentBeer", beerService.getBeerByName(name));
 		 mv.addObject("beer", beerService.getBeerByName(name));
 		 return mv;
 	 }
+	
 	 
 	 @RequestMapping(path = "EditBeer.do", 
 			 method = RequestMethod.POST)
-		public ModelAndView editVisit(Beer beer){
-			
+		public ModelAndView editBeer(@RequestParam("name")String name, @RequestParam("brewery")String brewery, 
+				@RequestParam("city")String city, @RequestParam("state")String state, @RequestParam("abv")String abv){
+			beerService.modifyBeer(name, brewery, city, state, abv);
+			ModelAndView mv = new ModelAndView();
+			mv.setViewName("beerlist");
+			mv.addObject("beerlist", beerService.getBeerList());
+		 return mv;
 		}
 	
 	 

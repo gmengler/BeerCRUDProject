@@ -18,8 +18,8 @@ public class BeerServiceImpl implements BeerService {
 
 	
 	@Override
-	public Beer modifyBeer(Beer beer) {
-		return beerDAO.modifyBeer(beer);
+	public void modifyBeer(String name, String brewery, String city, String state, String abv) {
+		beerDAO.modifyBeer(name, brewery, city, state, abv);
 	}
 
 	@Override

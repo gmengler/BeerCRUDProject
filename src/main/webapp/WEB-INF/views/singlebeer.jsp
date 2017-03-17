@@ -15,13 +15,13 @@
 				<li>${beer.abv}</li>
 			</ul>
 		
-		<form action="EditBeer.do" method="GET">
-			<button type="submit" name="name" value="${beer.name}">Edit Beer</button>
+		<form action="editbeer.jsp" method="POST">
+			<button type="submit" name="name" value="${beer}">Edit Beer</button>
 		</form>
 		
 		</c:when>
 		<c:otherwise>
-    No state found
+    No beer found
   </c:otherwise>
 	</c:choose>
 
