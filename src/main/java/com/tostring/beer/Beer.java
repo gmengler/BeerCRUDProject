@@ -1,6 +1,7 @@
 package com.tostring.beer;
 
 public class Beer {
+	private static int nextId = 1;
 	private String id;
 	private String name;
 	private String brewery;
@@ -10,11 +11,13 @@ public class Beer {
 	private String picURL;
 	
 	public Beer() {
+		this.id = "" + nextId++;
 	}
 	
-	public Beer(String id, String beer, String brewery, String city, String state, String abv, String picURL) {
-		super();
-		this.id = id;
+//	public Beer(String id, String beer, String brewery, String city, String state, String abv, String picURL) {
+	public Beer(String beer, String brewery, String city, String state, String abv, String picURL) {
+		this();
+//		this.id = id;
 		this.name = beer;
 		this.brewery = brewery;
 		this.city = city;
@@ -86,5 +89,30 @@ public class Beer {
 				+ ", abv=" + abv + "picURL=" + picURL + "]";
 	}
 	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Beer other = (Beer) obj;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
+	}
+
 
 }

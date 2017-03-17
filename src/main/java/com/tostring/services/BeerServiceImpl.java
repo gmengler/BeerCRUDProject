@@ -7,19 +7,21 @@ import org.springframework.stereotype.Service;
 import com.tostring.beer.Beer;
 import com.tostring.beer.BeerDAO;
 
-
 @Service
 public class BeerServiceImpl implements BeerService {
 	private BeerDAO beerDAO;
-	
+
 	public void setBeerDAO(BeerDAO beerDao) {
 		this.beerDAO = beerDao;
 	}
 
-	
 	@Override
-	public void modifyBeer(String name, String brewery, String city, String state, String abv, String picURL) {
-		beerDAO.modifyBeer(name, brewery, city, state, abv, picURL);
+	// public void modifyBeer(String name, String brewery, String city, String
+	// state, String abv, String picURL) {
+	// public void modifyBeer(String id, String name, String brewery, String
+	// city, String state, String abv, String picURL) {
+	public void modifyBeer(Beer beer) {
+		beerDAO.modifyBeer(beer);
 	}
 
 	@Override
@@ -36,7 +38,7 @@ public class BeerServiceImpl implements BeerService {
 	public List<Beer> getBeerList() {
 		return beerDAO.getBeerList();
 	}
-	
+
 	@Override
 	public Beer getBeerByName(String name) {
 		return beerDAO.getBeerByName(name);
@@ -54,15 +56,10 @@ public class BeerServiceImpl implements BeerService {
 		return null;
 	}
 
-
 	@Override
 	public Beer getBeer(Beer beer) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-
-
-
 
 }

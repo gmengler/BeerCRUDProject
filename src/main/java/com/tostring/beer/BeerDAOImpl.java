@@ -35,7 +35,8 @@ public class BeerDAOImpl implements BeerDAO {
 				String abv = tokens[5];
 				String picURL = tokens[6];
 				System.out.println(abv);
-				beers.add(new Beer(id, name, brewery, city, state, abv, picURL));
+//				beers.add(new Beer(id, name, brewery, city, state, abv, picURL));
+				beers.add(new Beer(name, brewery, city, state, abv, picURL));
 			}
 		} catch (Exception e) {
 			System.err.println(e);
@@ -88,14 +89,16 @@ public class BeerDAOImpl implements BeerDAO {
 	}
 
 	@Override
-	public void modifyBeer(String name, String brewery, String city, String state, String abv, String picURL) {
+	public void modifyBeer(Beer modBeer) {
 		for (Beer beer : beers) {
-			if(beer.getName().equalsIgnoreCase(name)) {
-				beer.setName(name);
-				beer.setBrewery(brewery);
-				beer.setCity(city);
-				beer.setState(state);
-				beer.setAbv(abv);
+			if(beer.getId().equals(modBeer.getId())) {
+//				if(beer.getName().equalsIgnoreCase(name)) {
+				beer.setName(modBeer.getName());
+				beer.setBrewery(modBeer.getBrewery());
+				beer.setCity(modBeer.getCity());
+				beer.setState(modBeer.getState());
+				beer.setAbv(modBeer.getAbv());
+				beer.setPicURL(modBeer.getPicURL());
 			}
 		}
 	}

@@ -57,10 +57,8 @@ public class BeerController {
 	 
 	 @RequestMapping(path = "EditBeer.do", 
 			 method = RequestMethod.POST)
-		public ModelAndView editBeer(@RequestParam("name")String name, @RequestParam("brewery")String brewery, 
-				@RequestParam("city")String city, @RequestParam("state")String state, @RequestParam("abv")String abv, 
-				@RequestParam("picURL")String picURL){
-			beerService.modifyBeer(name, brewery, city, state, abv, picURL);
+		public ModelAndView editBeer(Beer beer){
+			beerService.modifyBeer(beer);
 			ModelAndView mv = new ModelAndView();
 			mv.setViewName("beerlist");
 			mv.addObject("beerlist", beerService.getBeerList());
