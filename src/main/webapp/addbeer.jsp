@@ -12,7 +12,7 @@
 	Add brewery: <input type="text" name="brewery" /><br>
 	Add city: <input type="text" name="city"/><br>
 	Add state: <input type="text" name="state"/><br>
-	Add percent alcohol: <input type="text" value="abv"/><br>
+	Add percent alcohol: <input type="text" name="abv"/><br>
 	<button type="submit" value="Add Beer">Submit</button>
 </form>
 
