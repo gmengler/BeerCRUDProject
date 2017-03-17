@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.tostring.beer.Beer;
 import com.tostring.services.BeerService;
+
 
 /**
  * Handles requests for the application home page.
@@ -34,16 +36,70 @@ public class BeerController {
 			mv.setViewName("beerlist");
 			return mv;
 		}
-	
-	 @RequestMapping(path="AddBeer.do", 
+
+	 @RequestMapping(path="ViewBeer.do", 
+			 params="name",
 			 method=RequestMethod.GET)
-	 public ModelAndView getBeerList(@RequestParam("list") String n, @RequestParam("description") String d) {
-		 System.out.println(n);
-		 System.out.println(d);
+	 public ModelAndView selectBeer(@RequestParam("name")String name) {
 		 ModelAndView mv = new ModelAndView();
-		 mv.addObject("beer", beerService.getBeerList());
-		 mv.setViewName("home.jsp");
+		 mv.setViewName("singlebeer");
+		 mv.addObject("beer", beerService.getBeerByName(name));
 		 return mv;
 	 }
+	 
+	 @RequestMapping(path = "EditBeer.do", 
+			 method = RequestMethod.POST)
+		public ModelAndView editVisit(Beer beer){
+			
+		}
 	
+	 
+	 @RequestMapping(path="AddBeer.do",
+			 method=RequestMethod.POST)
+	 public ModelAndView addBeer(Beer beer) {
+		 beer.setId(beerService.getBeerList().size()+1+"");
+		 beerService.addBeer(beer);
+		 ModelAndView mv = new ModelAndView();
+		 mv.setViewName("beerlist");
+		 mv.addObject("beerlist", beerService.getBeerList());
+		 return mv;
+	 }
+	 
+	 @RequestMapping(path="DeleteBeer.do",
+			 method=RequestMethod.POST)
+	 public ModelAndView removeBeer(@RequestParam("name")String name) {
+		 beerService.removeBeer(name);
+		 ModelAndView mv = new ModelAndView();
+		 mv.setViewName("beerlist");
+		 mv.addObject("beerlist", beerService.getBeerList());
+		 return mv;
+		 
+
+	 }
+	 
+//	 @RequestMapping(path="SendToAddForm.do")
+//	 public ModelAndView addBeer() {
+//		 ModelAndView mv = new ModelAndView();
+//		 mv.setViewName("addbeer");
+//		 return mv;
+//	 }
+
+//	 @RequestMapping(path="SendToRemoveForm.do")
+//	 public ModelAndView removeBeer() {
+//		 ModelAndView mv = new ModelAndView();
+//		 mv.setViewName("removebeer");
+//		 return mv;
+//	 }
+	 
+	 
+	 
+	 @RequestMapping(path="initial.do")
+	 public ModelAndView initial() {
+		 ModelAndView mv = new ModelAndView();
+		 mv.setViewName("index");
+		 return mv;
+	 }
+	 
+	 
+	 
 }

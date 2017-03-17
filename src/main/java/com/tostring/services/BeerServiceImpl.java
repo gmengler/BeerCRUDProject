@@ -16,6 +16,11 @@ public class BeerServiceImpl implements BeerService {
 		this.beerDAO = beerDao;
 	}
 
+	
+	@Override
+	public Beer modifyBeer(Beer beer) {
+		return beerDAO.modifyBeer(beer);
+	}
 
 	@Override
 	public void addBeer(Beer beer) {
@@ -23,13 +28,18 @@ public class BeerServiceImpl implements BeerService {
 	}
 
 	@Override
-	public void removeBeer(Beer beer) {
-		beerDAO.removeBeer(beer);
+	public void removeBeer(String name) {
+		beerDAO.removeBeer(name);
 	}
 
 	@Override
 	public List<Beer> getBeerList() {
 		return beerDAO.getBeerList();
+	}
+	
+	@Override
+	public Beer getBeerByName(String name) {
+		return beerDAO.getBeerByName(name);
 	}
 
 	@Override
@@ -43,6 +53,16 @@ public class BeerServiceImpl implements BeerService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
+	@Override
+	public Beer getBeer(Beer beer) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
 
 
 }

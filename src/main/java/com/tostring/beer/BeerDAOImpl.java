@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.WebApplicationContext;
 
 
+
 public class BeerDAOImpl implements BeerDAO {
 	private static final String FILE_NAME = "/WEB-INF/beers.csv";
 	private List<Beer> beers = new ArrayList<>();
@@ -47,21 +48,61 @@ public class BeerDAOImpl implements BeerDAO {
 	}
 
 	@Override
+	public Beer getBeer(Beer beer) {
+		Beer b = null;
+		for (Beer beer1 : beers) {
+			if(beer1.getId().equals(beer)) {
+				b = beer1;
+			}
+		}
+		return b;
+	}
+
+	@Override
 	public void addBeer(Beer beer) {
 		beers.add(beer);
 
 	}
 
 	@Override
-	public void removeBeer(Beer beer) {
-		beers.remove(beer);
+	public void removeBeer(String name) {
+		int index = 0;
+			for (Beer beer2 : beers) {
+				if(beer2.getName().equals(name)){
+					index = beers.indexOf(beer2);
+					break;
+				}
+			}
+		beers.remove(index);
 	}
+	
+	public Beer getBeerByName(String name) {
+		Beer b = null;
+		for (Beer beer : beers) {
+			if (beer.getName().equalsIgnoreCase(name)) {
+				b = beer;
+				break;
+			}
+		}
+		return b;
+	}
+
+	@Override
+	public Beer modifyBeer(Beer beer) {
+//		beers.get(index)
+		Beer b = null;
+		for (Beer beer1 : beers) {
+			
+		return null;
+	}
+	
 
 	@Override
 	public Beer nextBeer(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 
 	@Override
 	public Beer previousBeer(String id) {
