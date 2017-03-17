@@ -43,9 +43,9 @@
 							${beer.state}<br> <strong>Alcohol by volume:</strong>
 							${beer.abv}%<br> <br>
 					</div>
-					<div class="col-sm-2">
+					<div class="col-sm-2 text-center">
 						<div id="beerpic">
-							<img class="resize" src="${beer.picURL}"/>
+							<img class="resize img-responsive center-block" src="${beer.picURL}"/>
 						</div>
 					</div>
 					<div class="col-sm-3"></div>
