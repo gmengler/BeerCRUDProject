@@ -15,9 +15,9 @@ With this application, the user is brought to the landing page where they can th
 
 ## Technologies Used
 
--Java
--Spring MVC
--HTML/CSS/Bootstrap
--Tomcat 8
--JSP/JSTL
--AWS
+* Java
+* Spring MVC
+* HTML/CSS/Bootstrap
+* Tomcat 8
+* JSP/JSTL
+* AWS
