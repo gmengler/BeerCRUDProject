@@ -60,8 +60,8 @@
 					</div>
 					<div class="col-sm-2">
 						<form action="DeleteBeer.do" method="POST">
-							<button type="submit" name="name" value="${beer.name}"
-								class="btn btn-danger">Delete Beer</button>
+							<button type="submit" name="name" value="${beer.name}"								
+							class="btn btn-danger">Delete Beer</button>
 						</form>
 					</div>
 					<div class="col-sm-4"></div>
