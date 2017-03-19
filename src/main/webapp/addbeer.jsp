@@ -53,7 +53,7 @@
 
 	<div class="container">
 		<div class="text-center">
-			<h2>Add your beer here</h2>
+			<h2>Add A Beer</h2>
 		</div>
 		<form class="form-horizontal" action="AddBeer.do" method="POST">
 			<div class="form-group">
