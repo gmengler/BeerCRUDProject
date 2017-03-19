@@ -16,42 +16,50 @@
 </head>
 
 <body>
-	<div class="container">
-		<div class="text-center" id="current">
-			<h2>Your Current Beer</h2>
+	<div class="container-fluid">
+		<div class="row" id="current">
+			<div class="col-sm-2"></div>
+			<div class="col-sm-8">
+				<div class="text-center">
+					<h2>Selected Beer</h2>
+				</div>
+			</div>
+			<div class="col-sm-2"></div>
+
 		</div>
 		<c:choose>
-		<c:when test="${! empty beer}">
-		<div class="row">
-			<div class="col-sm-2"></div>
-			<div class="col-sm-4">
-				<strong>Beer name: </strong> ${beer.name}<br>
-				<strong>Brewery: </strong> ${beer.brewery}<br>
-				<strong>City, State: </strong> ${beer.city}, ${beer.state}<br>
-				<strong>ABV: </strong> ${beer.abv}<br>
-			</div>
-			<div class="col-sm-4">
-				<img class="resize img-responsive center-block" src="${beer.picURL}"/>
-			</div>
-			<div class="col-sm-2"></div>
-		</div>
-		<div class="row">
-		<div class="col-sm-3"></div>
-		<div class="col-sm-3 buttons">
-				<form action="editbeer.jsp" method="POST">
-					<button type="submit" name="name" value="${beer}"
-									class="btn btn-default">Edit Beer</button>
-				</form>
-		</div>
-		<div class="col-sm-3 buttons">
-			<form action="GetBeerList.do" method="GET">
-				<button type=submit class="btn btn-default">Back to List</button>
-			</form>
-		</div>
-		<div class="col-sm-3"></div>
-		</div>
-		</c:when>
-		<c:otherwise>
+			<c:when test="${! empty beer}">
+				<div class="row">
+					<div class="col-sm-3"></div>
+					<div class="col-sm-3 text-center" id="beerinfo">
+						<strong>Beer name: </strong> ${beer.name}<br> <strong>Brewery:
+						</strong> ${beer.brewery}<br> <strong>City, State: </strong>
+						${beer.city}, ${beer.state}<br> <strong>ABV: </strong>
+						${beer.abv}<br>
+					</div>
+					<div class="col-sm-3">
+						<img class="resize img-responsive center-block"
+							src="${beer.picURL}" />
+					</div>
+					<div class="col-sm-3"></div>
+				</div>
+				<div class="row">
+					<div class="col-sm-3"></div>
+					<div class="col-sm-3 buttons text-center">
+						<form action="editbeer.jsp" method="POST">
+							<button type="submit" name="name" value="${beer}"
+								class="btn btn-default">Edit Beer</button>
+						</form>
+					</div>
+					<div class="col-sm-3 buttons text-center">
+						<form action="GetBeerList.do" method="GET">
+							<button type=submit class="btn btn-default">Back to List</button>
+						</form>
+					</div>
+					<div class="col-sm-3"></div>
+				</div>
+			</c:when>
+			<c:otherwise>
     	No beer found
   		</c:otherwise>
 		</c:choose>

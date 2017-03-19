@@ -1,11 +1,27 @@
 #current {
-	background-color: #656d7a;
+	/* background-color: #656d7a;
 	color: white;
 	margin-bottom: 20px;
 	padding: 1px;
-	padding-bottom: 13px;
+	padding-bottom: 13px; */
+	background-color: #656d7a;
+	color: white;
+	margin-bottom: 20px;
 }
 
 .buttons {
 	margin-top: 10px;
+}
+
+.resize {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: auto;
+	height: 100px;
+	border-radius: 10px;
+}
+
+#beerinfo {
+	text-align: left;
 }

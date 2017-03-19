@@ -24,7 +24,7 @@
 					<button type="submit" class="btn btn-default">Home</button>
 				</form>
 			</div>
-			<div class="col-sm-4 text-center" id="verticalalignbeerlist">
+			<div class="col-sm-4 text-center">
 				<h2>List of Beers</h2>
 			</div>
 			<div class="col-sm-1 text-center vertical-align">
@@ -55,7 +55,7 @@
 					<div class="col-sm-2">
 						<form action="ViewBeer.do" method="GET">
 							<button type="submit" name="name" value="${beer.name}"
-								class="btn btn-default">Select Beer</button>
+								class="btn btn-primary">Select Beer</button>
 						</form>
 					</div>
 					<div class="col-sm-2">
