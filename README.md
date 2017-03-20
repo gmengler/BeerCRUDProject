@@ -11,7 +11,7 @@ With this application, the user is brought to the landing page where they can th
 ![alt text](listpage.png "BeerCRUD list page")
 
 ## Application URL
-(coming soon)
+http://gregengler.com:8080/BeerCRUDProject/
 
 ## Technologies Used
 

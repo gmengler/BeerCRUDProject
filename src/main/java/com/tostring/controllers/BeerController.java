@@ -88,21 +88,6 @@ public class BeerController {
 
 	 }
 	 
-//	 @RequestMapping(path="SendToAddForm.do")
-//	 public ModelAndView addBeer() {
-//		 ModelAndView mv = new ModelAndView();
-//		 mv.setViewName("addbeer");
-//		 return mv;
-//	 }
-
-//	 @RequestMapping(path="SendToRemoveForm.do")
-//	 public ModelAndView removeBeer() {
-//		 ModelAndView mv = new ModelAndView();
-//		 mv.setViewName("removebeer");
-//		 return mv;
-//	 }
-	 
-	 
 	 
 	 @RequestMapping(path="initial.do")
 	 public ModelAndView initial() {
